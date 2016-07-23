@@ -1,0 +1,44 @@
+﻿@using MVCPractice.Models;
+@model Employee
+
+@{
+    ViewBag.Title = "EmployeeDetails";
+}
+
+<h2>EmployeeDetails</h2>
+
+<p>
+</p>
+<table>
+    <tr>
+        <td>EmployeeID
+        </td>
+        <td>
+            @Model.EmployeeID
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            @Model.Name
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Gender
+        </td>
+        <td>
+            @Model.Gender
+        </td>
+    </tr>
+    <tr>
+        <td>
+            City
+        </td>
+        <td>
+            @Model.City
+        </td>
+    </tr>
+</table>
