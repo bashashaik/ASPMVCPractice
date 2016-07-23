@@ -24,9 +24,11 @@ namespace MVCPractice.Controllers
 
             return View(objEmployee);
         }
-        public ActionResult Employees()
+        public ActionResult Index()
         {
-            return View();
+            EmployeeContext objEmployeeContext = new EmployeeContext();
+            List<Employee> lstEmployee = objEmployeeContext.Employees.ToList<Employee>();
+            return View(lstEmployee);
         }
 
     }
