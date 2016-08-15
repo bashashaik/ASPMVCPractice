@@ -1,0 +1,7 @@
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\bin\Debug\DAL.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\bin\Debug\DAL.pdb
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\bin\Debug\Properties.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\bin\Debug\Properties.pdb
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\obj\Debug\DAL.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\DAL\obj\Debug\DAL.pdb

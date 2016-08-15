@@ -164,6 +164,22 @@
   <ItemGroup>
     <Content Include="Views\Department\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{f651781f-1821-4a72-8ea0-d9387db37c03}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Properties\Properties.csproj">
+      <Project>{07c698a4-ad7b-4d31-9e75-0346db4378c9}</Project>
+      <Name>Properties</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Employee\GetAllEmployees.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Employee\Create.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

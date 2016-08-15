@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCPractice.Models;
+using BAL;
+
 
 namespace MVCPractice.Controllers
 {
@@ -46,6 +48,44 @@ namespace MVCPractice.Controllers
             }
             return View(lstEmployee);
         }
-
+        public ActionResult GetAllEmployees()
+        {
+            List<Properties.Employee> lstEmployee = null;
+            EmployeeBAL objEmployeeBAL = new EmployeeBAL();
+            lstEmployee = objEmployeeBAL.GetAllEmployees();
+            return View(lstEmployee);
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(FormCollection objFormCollection)
+        {
+            List<Properties.Employee> lstEmployee = new List<Properties.Employee>();
+            Properties.Employee objEmployee = new Properties.Employee();
+            //foreach(string strKey in objFormCollection)
+            //{
+            //    objEmployee = new Properties.Employee();
+            //    Response.Write("Key = " + strKey + "  ");
+            //    Response.Write("Value = " + objFormCollection[strKey]);
+            //    Response.Write("<br/>");
+            //}
+            if (ModelState.IsValid)
+            {
+                objEmployee.Name = objFormCollection["Name"];
+                objEmployee.Gender = objFormCollection["Gender"];
+                objEmployee.City = objFormCollection["City"];
+                objEmployee.DateOfBirth = Convert.ToDateTime(objFormCollection["DateOfBirth"]);
+                EmployeeBAL objEmployeeBAL = new EmployeeBAL();
+                objEmployeeBAL.InsertEmployee(objEmployee);
+                return RedirectToAction("GetAllEmployees");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

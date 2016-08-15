@@ -23,3 +23,9 @@ C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\Ent
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\EntityFramework.SqlServer.dll
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\EntityFramework.xml
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\EntityFramework.SqlServer.xml
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\BAL.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\Properties.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\DAL.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\BAL.pdb
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\Properties.pdb
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\MVCPractice\bin\DAL.pdb
