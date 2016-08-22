@@ -60,24 +60,41 @@ namespace MVCPractice.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public ActionResult Create(FormCollection objFormCollection)
+        //{
+        //    List<Properties.Employee> lstEmployee = new List<Properties.Employee>();
+        //    Properties.Employee objEmployee = new Properties.Employee();
+        //    //foreach(string strKey in objFormCollection)
+        //    //{
+        //    //    objEmployee = new Properties.Employee();
+        //    //    Response.Write("Key = " + strKey + "  ");
+        //    //    Response.Write("Value = " + objFormCollection[strKey]);
+        //    //    Response.Write("<br/>");
+        //    //}
+        //    if (ModelState.IsValid)
+        //    {
+        //        objEmployee.Name = objFormCollection["Name"];
+        //        objEmployee.Gender = objFormCollection["Gender"];
+        //        objEmployee.City = objFormCollection["City"];
+        //        objEmployee.DateOfBirth = Convert.ToDateTime(objFormCollection["DateOfBirth"]);
+        //        EmployeeBAL objEmployeeBAL = new EmployeeBAL();
+        //        objEmployeeBAL.InsertEmployee(objEmployee);
+        //        return RedirectToAction("GetAllEmployees");
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //}
         [HttpPost]
-        public ActionResult Create(FormCollection objFormCollection)
+        [ActionName("Create")]
+        public ActionResult CreateNewEmployee()
         {
-            List<Properties.Employee> lstEmployee = new List<Properties.Employee>();
             Properties.Employee objEmployee = new Properties.Employee();
-            //foreach(string strKey in objFormCollection)
-            //{
-            //    objEmployee = new Properties.Employee();
-            //    Response.Write("Key = " + strKey + "  ");
-            //    Response.Write("Value = " + objFormCollection[strKey]);
-            //    Response.Write("<br/>");
-            //}
+            TryUpdateModel<Properties.Employee>(objEmployee);
             if (ModelState.IsValid)
             {
-                objEmployee.Name = objFormCollection["Name"];
-                objEmployee.Gender = objFormCollection["Gender"];
-                objEmployee.City = objFormCollection["City"];
-                objEmployee.DateOfBirth = Convert.ToDateTime(objFormCollection["DateOfBirth"]);
                 EmployeeBAL objEmployeeBAL = new EmployeeBAL();
                 objEmployeeBAL.InsertEmployee(objEmployee);
                 return RedirectToAction("GetAllEmployees");

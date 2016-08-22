@@ -3,3 +3,8 @@ C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debu
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\obj\Debug\Properties.csprojResolveAssemblyReference.cache
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\obj\Debug\Properties.dll
 C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\obj\Debug\Properties.pdb
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debug\Properties.dll.config
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debug\EntityFramework.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debug\EntityFramework.xml
+C:\Users\Bash Shaik\OneDrive\App Dev\C#\Practise\MVCPractice\Properties\bin\Debug\EntityFramework.SqlServer.xml
