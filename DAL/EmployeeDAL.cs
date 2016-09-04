@@ -12,11 +12,18 @@ namespace DAL
 {
     public class EmployeeDAL
     {
+        #region Properties
         private string strConnectionString = string.Empty;
+        #endregion
+        
+        #region Constructor
         public EmployeeDAL()
         {
             strConnectionString = ConfigurationManager.ConnectionStrings["EmployeeContext"].ConnectionString.ToString();
         }
+        #endregion
+
+        #region GetAllEmployees
         public List<Employee> GetAllEmployees()
         {
             List<Employee> lstEmployee = new List<Employee>();
@@ -45,6 +52,9 @@ namespace DAL
             }
             return lstEmployee;
         }
+        #endregion
+
+        #region InsertEmployee
         public object InsertEmployee(Employee objEmployee)
         {
             int output = 0;
@@ -73,5 +83,32 @@ namespace DAL
             }
             return output;
         }
+        #endregion
+
+        #region UpdateEmployee
+        public object UpdateEmployee(Employee objEmployee)
+        {
+            object objOutput = null;
+            using(SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                using(SqlCommand sqlCmd = new SqlCommand())
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.CommandText = "uspUpdateEmployee";
+                    sqlCmd.Connection = connection;
+
+                    sqlCmd.Parameters.Add("@Id", System.Data.SqlDbType.BigInt).Value = objEmployee.Id;
+                    sqlCmd.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar).Value = objEmployee.Name;
+                    sqlCmd.Parameters.Add("@Gender", System.Data.SqlDbType.NVarChar).Value = objEmployee.Gender;
+                    sqlCmd.Parameters.Add("@City", System.Data.SqlDbType.NVarChar).Value = objEmployee.City;
+                    sqlCmd.Parameters.Add("@DateOfBirth", System.Data.SqlDbType.NVarChar).Value = objEmployee.DateOfBirth;
+
+                    connection.Open();
+                    objOutput = sqlCmd.ExecuteNonQuery();
+                }
+            }
+            return objOutput;
+        }
+        #endregion
     }
 }
