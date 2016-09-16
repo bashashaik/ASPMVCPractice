@@ -112,7 +112,7 @@ namespace MVCPractice.Controllers
             EmployeeBAL objEmployeeBAL = new EmployeeBAL();
             lstEmployee = objEmployeeBAL.GetAllEmployees();
             objEmployee = lstEmployee.First(x => x.Id == id);
-            if(objEmployee != null)
+            if (objEmployee != null)
             {
                 return View(objEmployee);
             }
@@ -125,33 +125,90 @@ namespace MVCPractice.Controllers
         [ActionName("Edit")]
         public ActionResult Edit_Post(int id)
         {
-             EmployeeBAL objEmployeeBAL = null;
-             Properties.Employee objEmployee = null;
-             List<Properties.Employee> lstEmployee = null;
-             if (ModelState.IsValid)
-             {
-                 try
-                 {
-                     objEmployeeBAL = new EmployeeBAL();
-                     lstEmployee = objEmployeeBAL.GetAllEmployees();
-                     objEmployee = lstEmployee.First(X => X.Id == id);
-                     TryUpdateModel(objEmployee, new string[] { "Gender", "City", "DateOfBirth"});
-                     objEmployeeBAL.UpdateEmployee(objEmployee);
-                 }
-                 catch (Exception ex)
-                 {
+            EmployeeBAL objEmployeeBAL = null;
+            Properties.Employee objEmployee = null;
+            List<Properties.Employee> lstEmployee = null;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objEmployeeBAL = new EmployeeBAL();
+                    lstEmployee = objEmployeeBAL.GetAllEmployees();
+                    objEmployee = lstEmployee.First(X => X.Id == id);
+                    TryUpdateModel(objEmployee, new string[] { "Gender", "City", "DateOfBirth" });
+                    objEmployeeBAL.UpdateEmployee(objEmployee);
+                }
+                catch (Exception ex)
+                {
 
-                 }
-                 finally
-                 {
-                     objEmployeeBAL = null;
-                 }
-                 return RedirectToAction("GetAllEmployees");
-             }
-             else
-             {
-                 return View();
-             }
+                }
+                finally
+                {
+                    objEmployeeBAL = null;
+                }
+                return RedirectToAction("GetAllEmployees");
+            }
+            else
+            {
+                return View();
+            }
         }
+        //[HttpPost]
+        //[ActionName("Edit")]
+        //public ActionResult Edit_Post([Bind(Exclude="Name")] Properties.Employee objEmployee)
+        //{
+        //    try
+        //    {
+        //        EmployeeBAL objEmployeeBAL = new EmployeeBAL();
+        //        objEmployee.Name = objEmployeeBAL.GetAllEmployees().FirstOrDefault(X => X.Id == objEmployee.Id).Name;
+        //        if(ModelState.IsValid)
+        //        {
+        //            objEmployeeBAL.UpdateEmployee(objEmployee);
+        //            return RedirectToAction("GetAllEmployees");
+        //        }
+        //        else
+        //        {
+        //            return View(objEmployee);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return View(objEmployee);
+        //    }
+        //    finally
+        //    {
+        //    }
+        //}
+
+        #region Delete
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            EmployeeBAL objEmployeeBAL = new EmployeeBAL();
+            Properties.Employee objEmployee = null;
+            try
+            {
+                objEmployee = new Properties.Employee();
+                TryUpdateModel(objEmployee);
+                objEmployeeBAL.DeleteEmployee(objEmployee);
+                return RedirectToAction("GetAllEmployees");
+            }
+            catch
+            {
+                return View();
+            }
+            finally
+            {
+                objEmployeeBAL = null;
+            }
+        }
+        #endregion
+
+        #region DatePicker
+        public ActionResult DatePicker()
+        {
+            return View();
+        }
+        #endregion
     }
 }

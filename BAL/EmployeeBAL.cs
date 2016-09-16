@@ -33,5 +33,13 @@ namespace BAL
             return objEmployeeDAL.UpdateEmployee(objEmployee);
         }
         #endregion
+
+        #region DeleteEmployee
+        public object DeleteEmployee(Properties.Employee objEmployee)
+        {
+            EmployeeDAL objEmployeeDAL = new EmployeeDAL();
+            return objEmployeeDAL.DeleteEmployee(objEmployee);
+        }
+        #endregion
     }
 }

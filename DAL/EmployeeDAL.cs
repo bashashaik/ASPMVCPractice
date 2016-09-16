@@ -110,5 +110,32 @@ namespace DAL
             return objOutput;
         }
         #endregion
+
+        #region DeleteEmployee
+        public object DeleteEmployee(Properties.Employee objEmployee)
+        {
+            object objOutput = null;
+            using(SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                using(SqlCommand sqlCmd = new SqlCommand())
+                {
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    sqlCmd.CommandText = "uspDeleteEmployee";
+                    sqlCmd.Connection = connection;
+                    if (objEmployee.Id == 0)
+                    {
+                        sqlCmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        sqlCmd.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = objEmployee.Id;
+                    }
+                    connection.Open();
+                    objOutput = sqlCmd.ExecuteNonQuery();
+                }
+            }
+            return objOutput;
+        }
+        #endregion
     }
 }
